@@ -1,0 +1,233 @@
+.section {
+  padding: 120px 0;
+  background-color: var(--color-primary);
+  background-image: radial-gradient(circle at 50% 50%, #204848 0%, var(--color-primary) 80%);
+  color: var(--color-white);
+  position: relative;
+  z-index: 10;
+}
+
+.headerArea {
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.headerArea h2 {
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carouselContainer {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 80px 40px 80px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 165, 116, 0.15); /* Gold outline */
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
+  
+  /* Initial scroll state */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quoteMark {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9rem;
+  font-family: var(--font-display), Georgia, serif;
+  color: rgba(212, 165, 116, 0.08); /* Faded gold quote mark */
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slider {
+  transition: opacity 0.3s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.star {
+  color: var(--color-secondary);
+  font-size: 1.15rem;
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-neutral-bg);
+  margin-bottom: 30px;
+}
+
+.authorArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.author {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-style: normal;
+}
+
+.company {
+  font-size: 0.85rem;
+  color: rgba(248, 247, 245, 0.7);
+  font-weight: 500;
+}
+
+.caseType {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(212, 165, 116, 0.6);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* Nav buttons */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  background-color: transparent;
+}
+
+.prevBtn {
+  left: 20px;
+}
+
+.nextBtn {
+  right: 20px;
+}
+
+.navBtn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: rgba(212, 165, 116, 0.05);
+}
+
+/* Pagination Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.dotActive {
+  background-color: var(--color-secondary);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.dot:hover {
+  background-color: rgba(212, 165, 116, 0.6);
+}
+
+/* Scroll Entrance Triggers */
+.visible .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .headerArea h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.visible .carouselContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .carouselContainer {
+    padding: 50px 30px 30px 30px;
+  }
+  .navBtn {
+    display: none; /* Hide arrow buttons on mobile */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carouselContainer {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .slider {
+    transition: none !important;
+  }
+}

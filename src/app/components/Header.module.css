@@ -1,0 +1,205 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-normal);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background-color: rgba(26, 58, 58, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 70px;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+  box-shadow: var(--shadow-sm);
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.logoIcon {
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+}
+
+.logoImage {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+.goldText {
+  color: var(--color-secondary);
+}
+
+/* Desktop Nav */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  position: relative;
+  padding: 6px 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89028 100%);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #E6C247 0%, #C49D28 100%);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.55);
+}
+
+/* Hamburger mobile menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  z-index: 1010;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburgerActive .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburgerActive .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburgerActive .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Mobile Nav Menu Drawer */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: var(--color-primary);
+  border-left: 1px solid rgba(212, 165, 116, 0.15);
+  box-shadow: var(--shadow-lg);
+  padding: 100px 40px;
+  transition: right var(--transition-normal);
+  z-index: 1005;
+}
+
+.mobileMenuActive {
+  right: 0;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobileNavLink {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
+}
+
+.mobileNavLink:hover {
+  color: var(--color-secondary);
+}
+
+.mobileCtaButton {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #D4AF37 0%, #B89028 100%);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 14px;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+}
+
+.mobileCtaButton:hover {
+  background: linear-gradient(135deg, #E6C247 0%, #C49D28 100%);
+}

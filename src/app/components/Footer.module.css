@@ -1,0 +1,329 @@
+.footerContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* 1. Pre-Footer CTA Section styling */
+.ctaSection {
+  background-color: var(--color-primary);
+  background-image: radial-gradient(circle at 50% 50%, #204848 0%, var(--color-primary) 80%);
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.ctaContent {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.ctaSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.ctaText {
+  color: rgba(248, 247, 245, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.ctaBtn {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89028 100%);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.ctaArrow {
+  transition: transform var(--transition-fast);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #E6C247 0%, #C49D28 100%);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.55);
+}
+
+.ctaBtn:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* 2. Main Footer Directory styling */
+.mainFooter {
+  background-color: #112525; /* Darker slate-green */
+  padding: 80px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.directoryGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1fr 1.1fr;
+  gap: 40px;
+}
+
+.columnInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+
+.logoIcon {
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+}
+
+.logoImage {
+  width: auto;
+  height: 36px;
+  object-fit: contain;
+}
+
+.goldText {
+  color: var(--color-secondary);
+}
+
+.companyBio {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.contactDetails {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.contactIcon {
+  color: var(--color-secondary);
+  font-size: 1rem;
+}
+
+.contactItem a:hover {
+  color: var(--color-secondary);
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.socialIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.socialIconBtn:hover {
+  background: #D4AF37;
+  color: #111111;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.columnTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkList a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-fast);
+}
+
+.linkList a:hover {
+  color: var(--color-secondary);
+  padding-left: 4px;
+}
+
+.hoursArea {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+}
+
+.hoursDay {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hoursTime {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.emergencyDisclaimer {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-secondary);
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* 3. Bottom Copyright Bar styling */
+.bottomBar {
+  background-color: #0b1a1a; /* Darkest shade */
+  padding: 24px 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bottomFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: inherit;
+  color: inherit;
+  line-height: 1.6;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottomLinks a,
+.bottomLinkBtn {
+  color: rgba(255, 255, 255, 0.4);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.bottomLinks a:hover,
+.bottomLinkBtn:hover {
+  color: var(--color-secondary);
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .directoryGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 80px 0;
+  }
+  .mainFooter {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .directoryGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .bottomFlex {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

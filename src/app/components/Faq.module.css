@@ -1,0 +1,195 @@
+.section {
+  padding: 120px 0;
+  background-color: var(--color-neutral-bg);
+  position: relative;
+  z-index: 10;
+}
+
+.headerArea {
+  max-width: 650px;
+  margin: 0 auto 70px auto;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sectionDesc {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  margin-top: 16px;
+  line-height: 1.6;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Localize section title animations */
+.headerArea h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordionContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordionItem {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  
+  /* Initial scroll reveal state */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.accordionHeader {
+  width: 100%;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background-color: transparent;
+  outline: none;
+}
+
+.questionText {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+  padding-right: 20px;
+}
+
+.accordionIcon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-secondary);
+  line-height: 1;
+  transition: color var(--transition-fast);
+  width: 20px;
+  text-align: center;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: 0fr; /* Modern CSS trick for animating height auto */
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contentWrapperOpen {
+  grid-template-rows: 1fr;
+}
+
+.content {
+  overflow: hidden;
+}
+
+.answerText {
+  padding: 0 30px 24px 30px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--color-text-light);
+}
+
+/* Open and Active States */
+.itemOpen {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.itemOpen .questionText {
+  color: var(--color-secondary);
+}
+
+.accordionHeader:hover .questionText {
+  color: var(--color-secondary);
+}
+
+/* Scroll reveals */
+.visible .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .headerArea h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.visible .sectionDesc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.visible .accordionItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .accordionItem:nth-child(1) { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.45s; }
+.visible .accordionItem:nth-child(2) { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s; }
+.visible .accordionItem:nth-child(3) { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.75s; }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .accordionHeader {
+    padding: 20px;
+  }
+  .questionText {
+    font-size: 1.1rem;
+  }
+  .answerText {
+    padding: 0 20px 20px 20px;
+    font-size: 0.92rem;
+  }
+  .accordionItem {
+    opacity: 1;
+    transform: none;
+    margin-bottom: 16px;
+  }
+  .visible .accordionItem:nth-child(1),
+  .visible .accordionItem:nth-child(2),
+  .visible .accordionItem:nth-child(3) {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordionItem {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .contentWrapper {
+    transition: none !important;
+  }
+}

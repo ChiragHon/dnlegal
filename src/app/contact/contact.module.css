@@ -1,0 +1,322 @@
+.headerSection {
+  padding: 140px 0 40px 0;
+  background-color: var(--color-neutral-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-lora);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--font-inter);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.contactFormSection {
+  padding: 80px 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--color-neutral-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 35px;
+}
+
+.card h2 {
+  font-family: var(--font-lora);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+}
+
+.infoItem {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.infoItem:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.infoItem strong {
+  font-family: var(--font-inter);
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.infoItem p {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.infoItem a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.infoItem a:hover {
+  color: var(--color-secondary);
+}
+
+.emergencyCard {
+  background-color: var(--color-primary);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  border-radius: var(--border-radius-sm);
+  padding: 35px;
+  color: var(--color-white);
+}
+
+.emergencyCard h3 {
+  font-family: var(--font-lora);
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  margin-bottom: 15px;
+}
+
+.emergencyCard p {
+  font-family: var(--font-inter);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+}
+
+.emergencyBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 14px;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.emergencyBtn:hover {
+  background-color: #c79665;
+  transform: translateY(-1px);
+}
+
+.formCol {
+  background-color: var(--color-white);
+}
+
+.formCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.formCard h2 {
+  font-family: var(--font-lora);
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.formCard > p {
+  font-family: var(--font-inter);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-neutral-bg);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  border-color: var(--color-secondary);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89028 100%);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 14px;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(135deg, #E6C247 0%, #C49D28 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.55);
+}
+
+.submitBtn:disabled {
+  background-color: var(--color-border);
+  box-shadow: none;
+  cursor: not-allowed;
+  color: var(--color-text-light);
+}
+
+.successMessage {
+  text-align: center;
+  padding: 30px 0;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.successMessage h3 {
+  font-family: var(--font-lora);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.successMessage p {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.resetBtn {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.resetBtn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .formCard {
+    padding: 25px;
+  }
+}

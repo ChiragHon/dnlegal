@@ -1,0 +1,214 @@
+.section {
+  padding: 120px 0;
+  background-color: var(--color-neutral-bg);
+  position: relative;
+  z-index: 10;
+}
+
+.headerArea {
+  max-width: 650px;
+  margin: 0 auto 70px auto;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sectionDesc {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  margin-top: 16px;
+  line-height: 1.6;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Localize section title animations */
+.headerArea h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 50px 35px;
+  transition: all var(--transition-normal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.iconContainer {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: rgba(26, 58, 58, 0.04);
+  border-radius: 50%;
+  margin-bottom: 24px;
+  transition: all var(--transition-fast);
+}
+
+.iconContainer svg {
+  width: 32px;
+  height: 32px;
+}
+
+.goldLine {
+  width: 35px;
+  height: 2px;
+  background-color: var(--color-secondary);
+  margin-bottom: 24px;
+  transition: width var(--transition-fast);
+}
+
+.statTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.counterNum {
+  font-family: var(--font-mono);
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(212, 165, 116, 0.4);
+}
+
+.card:hover .iconContainer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+.card:hover .goldLine {
+  width: 70px;
+}
+
+/* Staggered entry transitions on visibility trigger */
+.visible .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .headerArea h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.visible .sectionDesc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .card:nth-child(1) {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.45s;
+}
+
+.visible .card:nth-child(2) {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.6s;
+}
+
+.visible .card:nth-child(3) {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.75s;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .cardsGrid {
+    gap: 20px;
+  }
+  .card {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+  .card {
+    opacity: 1;
+    transform: none;
+  }
+  .visible .card:nth-child(1),
+  .visible .card:nth-child(2),
+  .visible .card:nth-child(3) {
+    transition: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

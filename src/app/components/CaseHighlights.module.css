@@ -1,0 +1,201 @@
+.section {
+  padding: 120px 0;
+  background-color: var(--color-neutral-bg);
+  position: relative;
+  z-index: 10;
+}
+
+.headerArea {
+  max-width: 650px;
+  margin: 0 auto 70px auto;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sectionDesc {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  margin-top: 16px;
+  line-height: 1.6;
+  
+  /* Initial state for entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Localize section title animations */
+.headerArea h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 45px;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Initial state for scroll reveal */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cardCategory {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}
+
+.cardOutcome {
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.outcomeLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+}
+
+.outcomeVal {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 165, 116, 0.4);
+}
+
+.card:hover .outcomeVal {
+  color: var(--color-secondary);
+}
+
+/* Scroll Trigger Entrance animation */
+.visible .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .headerArea h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.visible .sectionDesc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .column:nth-child(1) .card:nth-child(1) { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s; }
+.visible .column:nth-child(1) .card:nth-child(2) { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s; }
+.visible .column:nth-child(2) .card:nth-child(1) { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s; }
+.visible .column:nth-child(2) .card:nth-child(2) { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s; }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .masonryGrid {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  .column {
+    gap: 24px;
+  }
+  .card {
+    opacity: 1;
+    transform: none;
+    padding: 30px;
+  }
+  .visible .column:nth-child(1) .card:nth-child(1),
+  .visible .column:nth-child(1) .card:nth-child(2),
+  .visible .column:nth-child(2) .card:nth-child(1),
+  .visible .column:nth-child(2) .card:nth-child(2) {
+    transition: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
